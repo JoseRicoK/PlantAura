@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         String hola = "holaa chemaaa";
+        String plin = "plin plon";
     }
 }
