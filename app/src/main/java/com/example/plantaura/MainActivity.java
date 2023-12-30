@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         String hola = "holaa chemaaa";
 
+
         btn1 = findViewById(R.id.btnSiguiente);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+
+        String plin = "plin plon";
+
+      }
 
 
 }
