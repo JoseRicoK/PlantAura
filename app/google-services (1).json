@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "435681852678",
+    "project_id": "plantaura1",
+    "storage_bucket": "plantaura1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435681852678:android:b56edb673c3597bdba7287",
+        "android_client_info": {
+          "package_name": "com.example.plantaura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435681852678-8fmk3a4ptqdi2jv0b952co9ku1cc8aqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.plantaura",
+            "certificate_hash": "6bf42f6d2064af85fb84d525d350b624f4d92bfb"
+          }
+        },
+        {
+          "client_id": "435681852678-4o0h7eedjcu0b0lneq30kl4epnlkqq9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2cj1RWQ6YyvJDiLUUW91e6BZTNOhZwDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435681852678-4o0h7eedjcu0b0lneq30kl4epnlkqq9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
