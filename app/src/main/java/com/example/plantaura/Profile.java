@@ -7,16 +7,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Profile extends AppCompatActivity {
 
 
     TextView t1;
     FirebaseAuth firebaseAuth;
+    DatabaseReference userReference;
+    Button btnHS,btnHN;
 
 
     @Override
@@ -26,12 +33,41 @@ public class Profile extends AppCompatActivity {
 
 
         t1 = findViewById(R.id.txtProfile);
+        btnHS = findViewById(R.id.btnHubSi);
+        btnHN = findViewById(R.id.btnHubNo);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        userReference = FirebaseDatabase.getInstance().getReference("Users");
 
 
+        btnHS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                cambiarEstado("SI");
+            }
+        });
+
+        btnHN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                cambiarEstado("NO");
+            }
+        });
     }
+
+    private void cambiarEstado(String status) {
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null){
+            String uid = user.getUid();
+            userReference.child(uid).child("hub").setValue(status);
+            Toast.makeText(Profile.this,"Estado del Hub actualizado: "+ status,Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     private void checkUserStatus(){
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if(user!=null){
@@ -60,6 +96,7 @@ public class Profile extends AppCompatActivity {
         if (id == R.id.action_logout){
             firebaseAuth.signOut();
             checkUserStatus();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
