@@ -12,15 +12,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="298dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="55dp"
         android:text="Holaaaa chemitaaa jajajaja"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="92dp"
+        android:text="Tiene Hub en casa?..."
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfile" />
+
+
+    <Button
+        android:id="@+id/btnHubSi"
+        android:layout_width="163dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="140dp"
+        android:text="SI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btnHubNo"
+        android:layout_width="167dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="140dp"
+        android:text="NO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHubSi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

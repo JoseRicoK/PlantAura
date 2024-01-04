@@ -19,6 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 public class Register_User extends AppCompatActivity {
 
@@ -85,6 +90,25 @@ public class Register_User extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
+
+
+                            String email =user.getEmail();
+                            String uid = user.getUid();
+
+                            HashMap<Object, String> hashMap = new HashMap<>();
+                            hashMap.put("email",email);
+                            hashMap.put("uid",uid);
+                            hashMap.put("name","");
+                            hashMap.put("lastname","");
+                            hashMap.put("image","");
+                            hashMap.put("hub","");
+                            hashMap.put("plantas","");
+
+
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference reference = database.getReference("Users");
+                            reference.child(uid).setValue(hashMap);
+
                             Toast.makeText(Register_User.this,"Registrando"+user.getEmail(),Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register_User.this, Profile.class));
                             finish();

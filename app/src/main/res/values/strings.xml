@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PlantAura</string>
+    <string name="default_web_client_id">435681852678-4o0h7eedjcu0b0lneq30kl4epnlkqq9o.apps.googleusercontent.com</string>
+
 </resources>
